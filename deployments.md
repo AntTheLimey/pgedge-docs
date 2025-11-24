@@ -8,4 +8,4 @@ Test: Use this file to deploy changes to branches that do not require a change t
 
 11/21/2025 - publishing Spock docs
 
-11/24/2025 - publish Control Plane
+11/24/2025 - publish Control Plane - fix file names in mkdocs.yml
