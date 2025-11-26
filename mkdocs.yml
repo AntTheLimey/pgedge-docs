@@ -1,4 +1,5 @@
 site_name: pgEdge Documentation
+site_url: https://docs.pgedge.com
 
 extra_css:
   - stylesheets/extra.css
