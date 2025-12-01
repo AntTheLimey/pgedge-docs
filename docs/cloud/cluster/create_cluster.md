@@ -47,17 +47,19 @@ Select the [backup stores](https://docs.pgedge.com/cloud/backup/backup_store) th
 
 As you define backup stores, remember that selecting backup stores near your cluster nodes will reduce network latency during the backup process. Use the drop-down field or select locations on the map to include a specific store.
 
-A resource tag is a user-defined key/value information pair that you attach to your cluster definition.  The tag is displayed under the cluster name on the `Clusters` page.  You can use tags to categorize your cloud resources or search for resources that are used for specific teams or applications.  For example, you may want to include a tag that specifies `team: db-ops` to make it easy to identify the resources that are used by the `db-ops` team.
+A [resource tag](resource_tag.md) is a user-defined key/value information pair that you attach to your cluster definition.  The tag is displayed under the cluster name on the `Clusters` page.  You can use tags to categorize your cloud resources or search for resources that are used for specific teams or applications.  For example, you may want to include a tag that specifies `team: db-ops` to make it easy to identify the resources that are used by the `db-ops` team.
 
 ![Adding a resource tag](../images/resource_tag_add.png)
 
-You can define a VPC association to configure VPC peering and (if needed) private zone routing between any defined VPCs and the pgEdge cluster network. Peering allows an application to connect seamlessly to any of the nodes across regions, allowing you to fully leverage latency routing and dns failover. This is currently only available for AWS.
+To add a resource tag, select `Add Resource Tag`, and then specify the `Key` and `Value`; the terms will be displayed with a `/` used as a delimiter. 
+
+You can define a [VPC association](vpc_assoc.md) to configure VPC peering and (if needed) private zone routing between any defined VPCs and the pgEdge cluster network. Peering allows an application to connect seamlessly to any of the nodes across regions, allowing you to fully leverage latency routing and dns failover. This is currently only available for AWS.
 
 Use the `VPC Associations` fields to add any defined VPCs that should have access to your cluster.
 
 ![Define a VPC Association](../images/vpc_association.png)
 
-Use the `Firewall Rules` field to open ports on each node of your cluster for connections. Click the `+ Add Firewall Rule` icon to add a rule.
+Use the [`Firewall Rules`](/firewall.md) field to open ports on each node of your cluster for connections. Click the `+ Add Firewall Rule` icon to add a rule.
 
 ![Firewall rules](../images/firewall_rules.png)
 

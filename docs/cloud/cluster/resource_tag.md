@@ -1,5 +1,25 @@
 # Creating Resource Tags
 
-A resource tag is a user-defined key/value information pair that you attach to your cluster definition.  The tag is displayed under the cluster name on the `Clusters` page.  You can use tags to categorize your cloud resources or search for resources that are used for specific teams or applications.  For example, you may want to include a tag that specifies `team: db-ops` to make it easy to identify the resources that are used by the `db-ops` team.
+A resource tag is a user-defined key/value information pair that you attach to your cluster definition.  The tag is displayed under the cluster name on the `Clusters` page.  
+
+![Resource tags](../images/resource_tag_display.png)
+
+You can use tags to categorize your cloud resources or search for resources that are used for specific teams or applications.  For example, you may want to include a tag that specifies `team: db-ops` to make it easy to identify the resources that are used by the `db-ops` team.
 
 ![Adding a resource tag](../images/resource_tag_add.png)
+
+To add a resource tag to a cluster that was created without resource tags, select `Manage Tags` from the Actions drop-down, and then specify the `Key` and `Value`; the terms will be displayed with a `/` used as a delimiter.  After adding the tag(s), select `Update Tags` to update the tags associated with the cluster.
+
+!!! note
+
+    The `Key` for each resource tag must be unique for each selected cluster.
+
+To modify the resource tags associated with a cluster, select the `Edit tags` label in the cluster header.
+
+![Editing a resource tag](../images/resource_tag_edit.png)
+
+* To change the `Value` associated with a `Key`, type over the currently displayed value.
+
+* To add a new resource tag, select `Add Resource Tag`, and then specify the `Key` and `Value` in the open fields.
+
+When you're finished, select `Update Tags` to update the tags associated with the cluster.
