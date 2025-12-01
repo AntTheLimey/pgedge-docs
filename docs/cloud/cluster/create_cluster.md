@@ -27,7 +27,7 @@ Each region in which your cluster is deployed is represented by a pane in the `N
 * Use the `Network Type` toggle to specify if the connection values displayed or edited should be `Public` or `Private` addresses: 
 
   * `Public` network clusters will have IP addresses assigned to the nodes that can be accessed from the public internet.
-  * `Private` network cluster are not accessible from the public internet.
+  * `Private` network clusters are not accessible from the public internet.  Note that private network clusters are not available for Google Cloud Platform users.
 
 ![Configure Cloud Environment](../images/configure_network.png)
 
