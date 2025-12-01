@@ -315,7 +315,8 @@ nav:
   # Pinned to latest release - this should be updated when a new release is cut
   # Macro variables under extra also need to be updated, if changed
   - pgEdge Containers: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.4'
-  - ACE: '!import https://github.com/pgEdge/ace.git?branch=main'
+  #- ACE: '!import https://github.com/pgEdge/ace.git?branch=main'
+  - ACE: '!import https://github.com/pgEdge/ace.git?branch=mermaid'
   - lolor: '!import https://github.com/pgEdge/lolor.git?branch=main'
   - Snowflake: '!import https://github.com/pgEdge/snowflake.git?branch=main'
   - Spock v5: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
