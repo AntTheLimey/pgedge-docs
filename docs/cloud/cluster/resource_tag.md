@@ -1,4 +1,4 @@
-# Creating Resource Tags
+# Using Resource Tags
 
 A resource tag is a user-defined key/value information pair that you attach to your cluster definition.  The tag is displayed under the cluster name on the `Clusters` page.  
 
@@ -12,7 +12,7 @@ To add a resource tag to a cluster that was created without resource tags, selec
 
 !!! note
 
-    The `Key` for each resource tag must be unique for each selected cluster.
+    The `Key` for each resource tag must be unique among the keys for the selected cluster.
 
 To modify the resource tags associated with a cluster, select the `Edit tags` label in the cluster header.
 
