@@ -15,3 +15,16 @@
     --md-footer-logo-dark-mode: block;
     --md-footer-logo-light-mode: none;
 }
+
+/* Hide Preview Products from the top navigation tabs */
+.md-tabs__link[href*="pgedge-docloader/"] {
+    display: none;
+}
+
+.md-tabs__link[href*="pgedge-vectorizer/"] {
+    display: none;
+}
+
+.md-tabs__link[href*="pgedge-rag-server/"] {
+    display: none;
+}

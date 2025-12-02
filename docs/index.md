@@ -23,3 +23,11 @@ pgEdge Enterprise Postgres and pgEdge Distributed Postgres bring advanced multi-
 * [Snowflake](snowflake/index.md): Cluster-wide unique (Snowflake) sequence extension for Postgres.
 * [Spock v5](spock-v5/index.md): Multi-master replication for Postgres.
 
+## Preview Products
+
+!!! warning "Early Development"
+    The products listed below are previews intended for early development and experimentation only. They are not recommended for production use.
+
+* [pgEdge Docloader](pgedge-docloader/index.md): A command line tool for loading and maintaining documents in Postgres.
+* [pgEdge Vectorizer](pgedge-vectorizer/index.md): A Postgres extension for chunking and vectorising documents in Postgres for semantic search with pgvector.
+* [pgEdge RAG Server](pgedge-rag-server/index.md): An API server for running RAG (Retrieval-Augmented Generation) queries based on documents stored in Postgres, supporting multiple pipelines and LLMs/models.

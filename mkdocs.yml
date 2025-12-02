@@ -11,7 +11,11 @@ extra_javascript:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
 
@@ -321,6 +325,7 @@ nav:
   - Spock v5: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
   - Control Plane: '!import https://github.com/pgEdge/control-plane.git?branch=main'
 
-
-
-  
+  # Preview products
+  - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=v1.0.0-alpha2'
+  - pgEdge Vectorizer: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-alpha1'
+  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-alpha2'
