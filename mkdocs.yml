@@ -329,4 +329,4 @@ nav:
   # Preview products
   - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=v1.0.0-alpha2'
   - pgEdge Vectorizer: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-alpha3'
-  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-alpha3'
+  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-alpha5'
