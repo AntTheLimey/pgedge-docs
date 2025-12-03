@@ -52,6 +52,8 @@ Before configuring local access to the repository (`pgedge`), you should ensure 
 
 After meeting the prerequisites for your system, create the repository with the command:
 
-`sudo dnf install -y https://dnf.pgedge.com/reporpm/pgedge-release-latest.noarch.rpm` 
+```bash
+sudo dnf install -y https://dnf.pgedge.com/reporpm/pgedge-release-latest.noarch.rpm
+```
 
 After creating the repository, you're ready to [use the repository](./installing.md) to install Postgres and supporting components.
