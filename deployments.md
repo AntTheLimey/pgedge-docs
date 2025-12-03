@@ -1,6 +1,6 @@
 # Deployments
 
-Test: Use this file to deploy changes to branches that do not require a change to pgedge-docs - add to the list below to initiate a Cloudflare change.
+Test: Use this file to deploy changes to branches that do not require a change to pgedge-docs - add to the list below to initiate a Cloudflare update.
 
 11/7/2025 Testing deployment - first run
 
@@ -11,3 +11,5 @@ Test: Use this file to deploy changes to branches that do not require a change t
 11/24/2025 - publish Control Plane - fix file names in mkdocs.yml
 
 11/24/2025 - publish ACE content
+
+12/3/2025 - publishing snowflake typo fix.
