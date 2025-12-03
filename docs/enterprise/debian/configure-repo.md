@@ -17,8 +17,10 @@ sudo apt-get install lsb-release
 
 After meeting the prerequisites for your system, create the repository with the command:
 
-`sudo curl -sSL https://apt.pgedge.com/repodeb/pgedge-release_latest_all.deb -o /tmp/pgedge-release.deb`
+```bash
+sudo curl -sSL https://apt.pgedge.com/repodeb/pgedge-release_latest_all.deb -o /tmp/pgedge-release.deb
 
-`sudo dpkg -i /tmp/pgedge-release.deb && rm -f /tmp/pgedge-release.deb || true` 
+sudo dpkg -i /tmp/pgedge-release.deb && rm -f /tmp/pgedge-release.deb || true
+```
 
 After creating the repository, you're ready to use the repository to [install Postgres](./installing.md) and [supporting components](./components.md).
