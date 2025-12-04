@@ -7,6 +7,7 @@ extra_css:
 extra_javascript:
   # Pulled from control-plane repo for install page
   - /control-plane/scripts/generate-stack.js
+  - javascripts/tabs-dropdown.js
 
 markdown_extensions:
   - admonition
@@ -95,6 +96,25 @@ extra:
   cnpg_manifest_url: https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/release-1.27/releases/cnpg-1.27.1.yaml
   certmanager_manifest_url: https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
   control_plane_version: v0.5.1
+
+  # Navigation dropdown categories - maps nav item titles to dropdown menus
+  nav_categories:
+    Products:
+      - pgEdge Enterprise Postgres
+      - pgEdge Distributed Postgres
+      - pgEdge Cloud
+      - pgEdge Containers
+    Extensions:
+      - ACE
+      - lolor
+      - Snowflake
+      - Spock v5
+      - pgEdge Vectorizer
+    Tools:
+      - Control Plane
+      - pgEdge Anonymizer
+      - pgEdge Docloader
+      - pgEdge RAG Server
 
 copyright: Copyright &copy; 2023 - 2025 pgEdge, Inc –
   <a href="#__consent">Change cookie settings</a>

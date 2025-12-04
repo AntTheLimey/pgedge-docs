@@ -1,0 +1,60 @@
+{% set class = "md-tabs" %}
+{% if "navigation.tabs.sticky" in features %}
+  {% set class = class ~ " md-tabs--sticky" %}
+{% endif %}
+
+{# Get nav categories from mkdocs.yml extra section #}
+{% set nav_categories = config.extra.nav_categories or {} %}
+
+{# Macro to render a dropdown menu #}
+{% macro dropdown_menu(label, category_items, nav_items, dropdown_id) %}
+<li class="md-tabs__item md-tabs__dropdown" data-dropdown-id="{{ dropdown_id }}">
+  <button type="button" class="md-tabs__dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+    <span>{{ label }}</span>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="md-tabs__dropdown-icon">
+      <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+    </svg>
+  </button>
+  <ul class="md-tabs__dropdown-menu">
+    {% for nav_item in nav_items %}
+      {% set item_title = nav_item.title | striptags | trim %}
+      {% if item_title in category_items %}
+        {% if nav_item.url and nav_item.url != "." %}
+          {% set item_url = nav_item.url %}
+        {% elif nav_item.children %}
+          {% set item_url = nav_item.children | first | attr("url") %}
+        {% else %}
+          {% set item_url = "." %}
+        {% endif %}
+        <li class="md-tabs__dropdown-item">
+          <a href="{{ item_url | url }}" class="md-tabs__dropdown-link">
+            {{ item_title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</li>
+{% endmacro %}
+
+<nav class="{{ class }}" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      {# Welcome link #}
+      {% for nav_item in nav %}
+        {% if loop.first %}
+          <li class="md-tabs__item">
+            <a href="{{ nav_item.url | url }}" class="md-tabs__link">
+              {{ nav_item.title | striptags }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
+      {# Dropdown menus from config.extra.nav_categories #}
+      {% for category_name, category_items in nav_categories.items() %}
+        {{ dropdown_menu(category_name, category_items, nav, category_name | lower | replace(' ', '-')) }}
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
