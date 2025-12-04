@@ -17,14 +17,18 @@
 }
 
 /* Hide Preview Products from the top navigation tabs */
+.md-tabs__link[href*="pgedge-anonymizer/"] {
+    display: none;
+}
+
 .md-tabs__link[href*="pgedge-docloader/"] {
     display: none;
 }
 
-.md-tabs__link[href*="pgedge-vectorizer/"] {
+.md-tabs__link[href*="pgedge-rag-server/"] {
     display: none;
 }
 
-.md-tabs__link[href*="pgedge-rag-server/"] {
+.md-tabs__link[href*="pgedge-vectorizer/"] {
     display: none;
 }
