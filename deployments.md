@@ -13,3 +13,5 @@ Test: Use this file to deploy changes to branches that do not require a change t
 11/24/2025 - publish ACE content
 
 12/3/2025 - publishing snowflake typo fix.
+
+12/4/2025 - publish ACE update.
