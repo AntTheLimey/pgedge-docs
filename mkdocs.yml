@@ -278,6 +278,7 @@ nav:
       - Managing a Cluster: cloud/cluster/manage_cluster.md
       - Defining a Cluster's Backup Store: cloud/cluster/backup_store.md
       - Managing Firewall Rules: cloud/cluster/firewall.md
+      - Using Resource Tags: cloud/cluster/resource_tag.md
       - Managing VPC Associations: cloud/cluster/vpc_assoc.md
     - Database Management:
       - Reviewing your Databases: cloud/database/index.md

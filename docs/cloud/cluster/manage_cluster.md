@@ -11,6 +11,7 @@ If you've recently created or modified the cluster, the header displays a banner
 * The preferred connection type (`Public` or `Private`); this indicates if the cluster nodes are in a public subnet or not.
 * The `Cluster ID` associated with the cluster.
 * The name of the cloud provider account on which the cluster resides; click the name of the account to navigate to the details page for the account.
+* User-defined [resource tags](resource_tag.md) associated with the cluster.
 
 Also in the cluster header, a set of informational panes tell you the state of the cluster at a glance:
 
