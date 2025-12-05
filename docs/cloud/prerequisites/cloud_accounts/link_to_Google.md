@@ -122,3 +122,16 @@ When the command completes, Google Cloud Shell Terminal displays the information
 * The project name is in square brackets: `susan-test-408015`
 * The service account email follows: `pgedge-sa@susan-test-408015.iam.gserviceaccount.com`
 * The provider is the last information listed: ` https://iam.googleapis.com/projects/998194889240/locations/global/workloadIdentityPools/pgedge/providers/pgedge-oidc`
+
+
+## Deleting an Account Link
+
+Before deleting an account link, ensure that any resources deployed with Cloud have been backed up to your satisfaction and destroyed. Then, to delete the link to a cloud vendor account, select the menu icon (...) in the top-right corner of the pane of a linked account.
+
+When the menu opens, select `Unlink Account`.
+
+![Deleting an account link](../../images/unlink_account.png)
+
+To confirm that you wish to unlink the account, enter the account name in the `Unlink Cloud Account` popup, and press the `Unlink Account` button.
+
+![Deleting an account link](../../images/unlink_confirm.png)
