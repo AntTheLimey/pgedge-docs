@@ -15,3 +15,5 @@ Test: Use this file to deploy changes to branches that do not require a change t
 12/3/2025 - publishing snowflake typo fix.
 
 12/4/2025 - publish ACE update.
+
+12/8/2025 - publish updated pgEdge Document Loader docs.
