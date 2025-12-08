@@ -21,3 +21,6 @@ Test: Use this file to deploy changes to branches that do not require a change t
 12/8/2025 - publish updated pgEdge Document Loader docs after rearranging Troubleshooting page.
 
 12/8/2025 - publish updated pgEdge Document Loader docs after fixing build issues from Quickstart page.
+
+12/8/2025 - publish updated pgEdge Document Loader docs after fixing title for Release Notes.
+
