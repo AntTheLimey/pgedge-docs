@@ -24,3 +24,4 @@ Test: Use this file to deploy changes to branches that do not require a change t
 
 12/8/2025 - publish updated pgEdge Document Loader docs after fixing title for Release Notes.
 
+12/9/2025 - publish updated pgEdge Document Loader docs after fixing title for Release Notes.
