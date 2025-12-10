@@ -27,3 +27,4 @@ Test: Use this file to deploy changes to branches that do not require a change t
 12/9/2025 - publish updated pgEdge Document Loader docs after fixing title for Release Notes.
 Redeploy
 12/10/2025 - publish updates with minor fixes.
+12/10/2025 - reversed symlink in Anonymizer repo.
