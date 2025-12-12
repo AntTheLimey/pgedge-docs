@@ -330,5 +330,5 @@ nav:
   # Preview products
   - pgEdge Anonymizer: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
   - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
-  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-alpha5'
+  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
   - pgEdge Vectorizer: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-alpha3'
