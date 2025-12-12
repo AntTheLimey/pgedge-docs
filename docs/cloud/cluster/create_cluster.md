@@ -59,7 +59,7 @@ Use the `VPC Associations` fields to add any defined VPCs that should have acces
 
 ![Define a VPC Association](../images/vpc_association.png)
 
-Use the [`Firewall Rules`](/firewall.md) field to open ports on each node of your cluster for connections. Click the `+ Add Firewall Rule` icon to add a rule.
+Use the [`Firewall Rules`](firewall.md) field to open ports on each node of your cluster for connections. Click the `+ Add Firewall Rule` icon to add a rule.
 
 ![Firewall rules](../images/firewall_rules.png)
 
