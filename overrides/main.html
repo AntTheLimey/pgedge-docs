@@ -4,3 +4,58 @@
   <meta name="description" content="pgEdge provides open source enterprise PostgreSQL for distributed and non-distributed applications to achieve high availability and reduce data latency.">
   <meta name="keywords" content="database, postgres, postgresql, enterprise postgres, postgres download, relational, high availability, multi master, multi-master, multimaster, active active, active-active, replication, spock, snowflake, lolor, docker, kubernetes">
 {% endblock %}
+
+{% block content %}
+  {# Version selector for versioned documentation #}
+  {% set versioned_docs = config.extra.versioned_docs or {} %}
+  {% set current_path = page.url | default('') %}
+
+  {# Check if current page is in a versioned docset #}
+  {% for docset_path, docset_config in versioned_docs.items() %}
+    {% if current_path.startswith(docset_path ~ '/') %}
+      {# Extract current version from path #}
+      {% set path_parts = current_path.split('/') %}
+      {% set current_version = path_parts[1] if path_parts | length > 1 else '' %}
+
+      <div class="md-version-selector" data-docset="{{ docset_path }}">
+        <div class="md-version-selector__inner">
+          <label class="md-version-selector__label">Version:</label>
+          <div class="md-version-selector__dropdown">
+            <button type="button" class="md-version-selector__toggle" aria-expanded="false" aria-haspopup="listbox">
+              <span class="md-version-selector__current">
+                {% for ver in docset_config.versions %}
+                  {% if ver.version == current_version %}
+                    {{ ver.title }}
+                  {% endif %}
+                {% endfor %}
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="md-version-selector__icon">
+                <path d="M7 10l5 5 5-5z" fill="currentColor"/>
+              </svg>
+            </button>
+            <ul class="md-version-selector__menu" role="listbox">
+              {% for ver in docset_config.versions %}
+                <li class="md-version-selector__item{% if ver.version == current_version %} md-version-selector__item--active{% endif %}" role="option">
+                  <a href="{{ ('/' ~ docset_path ~ '/' ~ ver.version ~ '/') | url }}" class="md-version-selector__link">
+                    {{ ver.title }}
+                    {% if ver.version == docset_config.current %}
+                      <span class="md-version-selector__badge">Latest</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+              <li class="md-version-selector__item md-version-selector__item--divider" role="separator"></li>
+              <li class="md-version-selector__item" role="option">
+                <a href="{{ ('/' ~ docset_path ~ '/latest/') | url }}" class="md-version-selector__link md-version-selector__link--latest">
+                  Always use latest
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  {{ super() }}
+{% endblock %}

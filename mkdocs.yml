@@ -9,6 +9,7 @@ extra_javascript:
   - /control-plane/scripts/generate-stack.js
   - javascripts/tabs-dropdown.js
   - javascripts/org-stars.js
+  - javascripts/version-selector.js
 
 markdown_extensions:
   - admonition
@@ -33,6 +34,11 @@ plugins:
       j2_comment_end_string: "#>"
   - redoc-tag
   - gh-admonitions
+  - redirects:
+      redirect_maps:
+        # Redirect /latest/ to current version for versioned docsets
+        # Note: version paths are slugified (dots become dashes)
+        'pgedge-postgres-mcp-server/latest/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/index.md'
 
 theme:
   name: material
@@ -98,6 +104,35 @@ extra:
   certmanager_manifest_url: https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
   control_plane_version: v0.5.1
 
+  # Versioned documentation configuration
+  # Maps docset base paths to their available versions
+  # Note: version paths are slugified by MkDocs (dots become dashes)
+  versioned_docs:
+    pgedge-postgres-mcp-server:
+      current: v1-0-0-beta1
+      versions:
+        - version: v1-0-0-beta1
+          title: v1.0.0-beta1 (Latest)
+          branch: v1.0.0-beta1
+        - version: v1-0-0-alpha6
+          title: v1.0.0-alpha6
+          branch: v1.0.0-alpha6
+        - version: v1-0-0-alpha5
+          title: v1.0.0-alpha5
+          branch: v1.0.0-alpha5
+        - version: v1-0-0-alpha4
+          title: v1.0.0-alpha4
+          branch: v1.0.0-alpha4
+        - version: v1-0-0-alpha3
+          title: v1.0.0-alpha3
+          branch: v1.0.0-alpha3
+        - version: v1-0-0-alpha2
+          title: v1.0.0-alpha2
+          branch: v1.0.0-alpha2
+        - version: v1-0-0-alpha1
+          title: v1.0.0-alpha1
+          branch: v1.0.0-alpha1
+
   # Navigation dropdown categories - maps nav item titles to dropdown menus
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
   nav_categories:
@@ -119,7 +154,7 @@ extra:
       - title: pgEdge Docloader
         url: pgedge-docloader/
       - title: pgEdge Postgres MCP Server
-        url: pgedge-postgres-mcp-server/
+        url: pgedge-postgres-mcp-server/v1-0-0-beta1/
       - title: pgEdge RAG Server
         url: pgedge-rag-server/
 
@@ -354,8 +389,16 @@ nav:
   - Spock v5: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
   - Control Plane: '!import https://github.com/pgEdge/control-plane.git?branch=main'
 
-  # AI Toolkit
-  - pgEdge Postgres MCP Server: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=main'
+  # AI Toolkit - pgEdge Postgres MCP Server (versioned documentation)
+  # Each version is imported separately to enable version navigation
+  - pgEdge Postgres MCP Server:
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-beta1'
+    - v1.0.0-alpha6: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha6'
+    - v1.0.0-alpha5: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha5'
+    - v1.0.0-alpha4: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha4'
+    - v1.0.0-alpha3: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha3'
+    - v1.0.0-alpha2: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha2'
+    - v1.0.0-alpha1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha1'
   - pgEdge Anonymizer: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
   - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
   - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
