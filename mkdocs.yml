@@ -36,9 +36,46 @@ plugins:
   - gh-admonitions
   - redirects:
       redirect_maps:
-        # Redirect /latest/ to current version for versioned docsets
-        # Note: version paths are slugified (dots become dashes)
+        # ==========================================================================
+        # pgEdge Postgres MCP Server - Versioned Documentation Redirects
+        # ==========================================================================
+        # /latest/ paths redirect to current version (v1-0-0-beta1)
+        # Note: Bare /pgedge-postgres-mcp-server/ redirect is handled by
+        # docs/pgedge-postgres-mcp-server/index.md with JavaScript redirect
         'pgedge-postgres-mcp-server/latest/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/index.md'
+        'pgedge-postgres-mcp-server/latest/quickstart/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/quickstart/index.md'
+        'pgedge-postgres-mcp-server/latest/changelog/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/changelog/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/authentication/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/authentication/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/cli-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/cli-client/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/configuration/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/configuration/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/deployment/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/deployment/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/mcp-vs-rag/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/mcp-vs-rag/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/security/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/security/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/troubleshooting/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/troubleshooting/index.md'
+        'pgedge-postgres-mcp-server/latest/guide/web-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/web-client/index.md'
+        'pgedge-postgres-mcp-server/latest/advanced/custom-definitions/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/custom-definitions/index.md'
+        'pgedge-postgres-mcp-server/latest/advanced/knowledgebase/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/knowledgebase/index.md'
+        'pgedge-postgres-mcp-server/latest/advanced/llm-proxy/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/llm-proxy/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/tools/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/tools/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/resources/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/resources/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/prompts/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/prompts/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/examples/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/examples/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/config-examples/server/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/server/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/config-examples/kb-builder/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/kb-builder/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/config-examples/tokens/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/tokens/index.md'
+        'pgedge-postgres-mcp-server/latest/reference/config-examples/cli-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/cli-client/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/overview/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/overview/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/api-reference/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/api-reference/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/building-chat-clients/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/building-chat-clients/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/mcp-protocol/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/mcp-protocol/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/http-ollama-chatbot/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/http-ollama-chatbot/index.md'
+        'pgedge-postgres-mcp-server/latest/developers/stdio-anthropic-chatbot/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/stdio-anthropic-chatbot/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/architecture/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/ci-cd/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/ci-cd/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/development/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/development/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/internal-architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/internal-architecture/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/internal/kb-builder-architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/internal/kb-builder-architecture/index.md'
+        'pgedge-postgres-mcp-server/latest/contributing/testing/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/testing/index.md'
 
 theme:
   name: material
@@ -154,7 +191,7 @@ extra:
       - title: pgEdge Docloader
         url: pgedge-docloader/
       - title: pgEdge Postgres MCP Server
-        url: pgedge-postgres-mcp-server/v1-0-0-beta1/
+        url: pgedge-postgres-mcp-server/
       - title: pgEdge RAG Server
         url: pgedge-rag-server/
 
