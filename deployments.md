@@ -19,3 +19,4 @@ Test: Use this file to deploy changes to branches that do not require a change t
 12/10/2025 - reversed symlink in Anonymizer repo.
 12/11/2025 - Control plane updates.
 12/12/2025 - Indentation in CP issue.
+12/17/2025 - Add Macros support to the MCP server docs to fix errors when importing.
