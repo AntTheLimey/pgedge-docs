@@ -21,3 +21,4 @@ Test: Use this file to deploy changes to branches that do not require a change t
 12/12/2025 - Indentation in CP issue.
 12/17/2025 - Add Macros support to the MCP server docs to fix errors when importing.
 12/17/2025 - Add Quickstart to MCP guide.
+12/17/2025 - Edits to the Quickstart...
