@@ -1,9 +1,12 @@
 // Version selector dropdown functionality
 // Handles dropdown toggle, outside clicks, keyboard navigation, and smart version switching
 (function() {
+    'use strict';
+
     let activeSelector = null;
     let activeMenu = null;
     let activeToggle = null;
+    let initialized = new WeakSet();
 
     function showMenu(selector, toggle, menu) {
         // Close any currently open selector first
@@ -39,21 +42,21 @@
     // Check if a URL exists (returns a promise)
     function urlExists(url) {
         return fetch(url, { method: 'HEAD' })
-            .then(response => response.ok)
-            .catch(() => false);
+            .then(function(response) { return response.ok; })
+            .catch(function() { return false; });
     }
 
     // Handle version link clicks - try same page, fall back to index
     function handleVersionClick(e) {
-        const link = e.target.closest('.md-version-selector__link');
+        var link = e.target.closest('.md-version-selector__link');
         if (!link) return;
 
-        const selector = link.closest('.md-version-selector');
+        var selector = link.closest('.md-version-selector');
         if (!selector) return;
 
-        const targetVersion = link.dataset.versionSlug;
-        const docset = link.dataset.docset;
-        const currentSubpath = selector.dataset.currentSubpath;
+        var targetVersion = link.dataset.versionSlug;
+        var docset = link.dataset.docset;
+        var currentSubpath = selector.dataset.currentSubpath;
 
         // If no subpath or clicking same version, use default link behavior
         if (!currentSubpath || !targetVersion || !docset) {
@@ -63,12 +66,12 @@
         // Prevent default to handle navigation ourselves
         e.preventDefault();
 
-        const baseUrl = '/' + docset + '/' + targetVersion + '/';
-        const samePageUrl = baseUrl + currentSubpath;
-        const indexUrl = baseUrl;
+        var baseUrl = '/' + docset + '/' + targetVersion + '/';
+        var samePageUrl = baseUrl + currentSubpath;
+        var indexUrl = baseUrl;
 
         // Try the same page first, fall back to index
-        urlExists(samePageUrl).then(exists => {
+        urlExists(samePageUrl).then(function(exists) {
             if (exists) {
                 window.location.href = samePageUrl;
             } else {
@@ -77,47 +80,51 @@
         });
     }
 
-    function initVersionSelectors() {
-        const selectors = document.querySelectorAll('.md-version-selector');
+    function initSelector(selector) {
+        // Skip if already initialized
+        if (initialized.has(selector)) return;
 
-        selectors.forEach(function(selector) {
-            const toggle = selector.querySelector('.md-version-selector__toggle');
-            const menu = selector.querySelector('.md-version-selector__menu');
+        var toggle = selector.querySelector('.md-version-selector__toggle');
+        var menu = selector.querySelector('.md-version-selector__menu');
 
-            if (!toggle || !menu) return;
+        if (!toggle || !menu) return;
 
-            // Reset menu state
-            menu.style.display = 'none';
-            selector.classList.remove('is-open');
+        // Mark as initialized
+        initialized.add(selector);
 
-            // Remove any existing listeners by cloning
-            const newToggle = toggle.cloneNode(true);
-            toggle.parentNode.replaceChild(newToggle, toggle);
+        // Reset menu state
+        menu.style.display = 'none';
+        selector.classList.remove('is-open');
 
-            newToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
+        // Add click handler to toggle
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-                const isCurrentlyOpen = selector.classList.contains('is-open');
+            var isCurrentlyOpen = selector.classList.contains('is-open');
 
-                if (isCurrentlyOpen) {
-                    hideMenu();
-                } else {
-                    showMenu(selector, this, menu);
-                }
-            });
-
-            // Add keyboard navigation
-            newToggle.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    this.click();
-                }
-            });
-
-            // Handle version link clicks for smart switching
-            menu.addEventListener('click', handleVersionClick);
+            if (isCurrentlyOpen) {
+                hideMenu();
+            } else {
+                showMenu(selector, toggle, menu);
+            }
         });
+
+        // Add keyboard navigation
+        toggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle.click();
+            }
+        });
+
+        // Handle version link clicks for smart switching
+        menu.addEventListener('click', handleVersionClick);
+    }
+
+    function initVersionSelectors() {
+        var selectors = document.querySelectorAll('.md-version-selector');
+        selectors.forEach(initSelector);
     }
 
     // Close dropdown when clicking outside
@@ -134,7 +141,7 @@
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && activeSelector) {
             hideMenu();
-            activeToggle?.focus();
+            if (activeToggle) activeToggle.focus();
         }
     });
 
@@ -146,7 +153,48 @@
     }
 
     // Re-initialize after instant navigation (MkDocs Material)
+    // Use multiple methods for reliability
     if (typeof document$ !== 'undefined') {
-        document$.subscribe(initVersionSelectors);
+        document$.subscribe(function() {
+            // Small delay to ensure DOM is updated
+            setTimeout(initVersionSelectors, 10);
+        });
     }
+
+    // Also use location change detection as fallback
+    var lastUrl = location.href;
+    setInterval(function() {
+        if (location.href !== lastUrl) {
+            lastUrl = location.href;
+            // Reset initialized set for new page
+            initialized = new WeakSet();
+            setTimeout(initVersionSelectors, 50);
+        }
+    }, 100);
+
+    // MutationObserver as additional fallback for dynamically added selectors
+    var observer = new MutationObserver(function(mutations) {
+        var shouldInit = false;
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === 1) {
+                        if (node.classList && node.classList.contains('md-version-selector')) {
+                            shouldInit = true;
+                        } else if (node.querySelector && node.querySelector('.md-version-selector')) {
+                            shouldInit = true;
+                        }
+                    }
+                });
+            }
+        });
+        if (shouldInit) {
+            initVersionSelectors();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 })();
