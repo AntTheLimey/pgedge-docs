@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="not-found-content" style="display: none;">
+  <h1>Page not found</h1>
+  <p>The page you requested could not be found.</p>
+</div>
+
+{# Build version redirect data for JavaScript #}
+{% set versioned_docsets = config.extra.versioned_docsets or [] %}
+<script>
+(function() {
+    var notFoundContent = document.getElementById('not-found-content');
+
+    function show404() {
+        notFoundContent.style.display = 'block';
+    }
+
+    // Versioned docset redirect configuration
+    // Auto-generated from nav structure
+    var versionedDocsets = {
+        {% for docset_slug in versioned_docsets %}
+        {% for nav_item in nav %}
+        {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
+        {% if nav_title_slug == docset_slug and nav_item.children %}
+        {% set ns = namespace(latest='') %}
+        {% for child in nav_item.children %}
+        {% if child.title != 'Development' and not ns.latest %}
+        {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
+        {% endif %}
+        {% endfor %}
+        '{{ docset_slug }}': '{{ ns.latest }}'{% if not loop.last %},{% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    };
+
+    var path = window.location.pathname;
+
+    // Check each versioned docset
+    for (var docset in versionedDocsets) {
+        var prefix = '/' + docset + '/';
+        if (path.startsWith(prefix)) {
+            var latestVersion = versionedDocsets[docset];
+            var subpath = path.substring(prefix.length);
+
+            // Check if this is already a versioned path
+            // (starts with a version slug like v1-0-0-beta1 or development)
+            var firstSegment = subpath.split('/')[0];
+
+            // If first segment looks like a version (starts with 'v' or is 'development'),
+            // this is a true 404 - don't redirect
+            if (firstSegment.match(/^v\d/) || firstSegment === 'development') {
+                show404();
+                return;
+            }
+
+            // Otherwise, redirect to the latest version
+            var redirectUrl = '/' + docset + '/' + latestVersion + '/' + subpath;
+
+            // Check if target exists before redirecting
+            fetch(redirectUrl, { method: 'HEAD' })
+                .then(function(response) {
+                    if (response.ok) {
+                        window.location.replace(redirectUrl);
+                    } else {
+                        show404();
+                    }
+                })
+                .catch(function() {
+                    show404();
+                });
+
+            return;
+        }
+    }
+
+    // Not a versioned docset path - show 404
+    show404();
+})();
+</script>
+{% endblock %}

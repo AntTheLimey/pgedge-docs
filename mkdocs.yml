@@ -9,6 +9,7 @@ extra_javascript:
   - /control-plane/scripts/generate-stack.js
   - javascripts/tabs-dropdown.js
   - javascripts/org-stars.js
+  - javascripts/version-selector.js
 
 markdown_extensions:
   - admonition
@@ -33,6 +34,11 @@ plugins:
       j2_comment_end_string: "#>"
   - redoc-tag
   - gh-admonitions
+  - redirects:
+      redirect_maps:
+        # Versioned documentation root redirects
+        # Each product root redirects to the latest version
+        # (The actual redirect is handled by docs/<product>/index.md files)
 
 theme:
   name: material
@@ -98,6 +104,22 @@ extra:
   certmanager_manifest_url: https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
   control_plane_version: v0.5.1
 
+  # Versioned documentation - list docsets that have multiple versions
+  # Versions are auto-detected from nav structure
+  # Convention: first version = latest, "Development" = unstable/main branch
+  versioned_docsets:
+    - pgedge-containers
+    - ace
+    - lolor
+    - snowflake
+    - spock-v5
+    - control-plane
+    - pgedge-postgres-mcp-server
+    - pgedge-anonymizer
+    - pgedge-docloader
+    - pgedge-rag-server
+    - pgedge-vectorizer
+
   # Navigation dropdown categories - maps nav item titles to dropdown menus
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
   nav_categories:
@@ -105,15 +127,22 @@ extra:
       - pgEdge Enterprise Postgres
       - pgEdge Distributed Postgres
       - pgEdge Cloud
-      - pgEdge Containers
+      - title: pgEdge Containers
+        url: pgedge-containers/
     Extensions:
-      - ACE
-      - lolor
-      - Snowflake
-      - Spock v5
-      - pgEdge Vectorizer
+      - title: ACE
+        url: ace/
+      - title: lolor
+        url: lolor/
+      - title: Snowflake
+        url: snowflake/
+      - title: Spock v5
+        url: spock-v5/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
     Tools:
-      - Control Plane
+      - title: Control Plane
+        url: control-plane/
       - title: pgEdge Anonymizer
         url: pgedge-anonymizer/
       - title: pgEdge Docloader
@@ -347,16 +376,54 @@ nav:
 
   # Pinned to latest release - this should be updated when a new release is cut
   # Macro variables under extra also need to be updated, if changed
-  - pgEdge Containers: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.4'
-  - ACE: '!import https://github.com/pgEdge/ace.git?branch=main'
-  - lolor: '!import https://github.com/pgEdge/lolor.git?branch=main'
-  - Snowflake: '!import https://github.com/pgEdge/snowflake.git?branch=main'
-  - Spock v5: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
-  - Control Plane: '!import https://github.com/pgEdge/control-plane.git?branch=main'
+  - pgEdge Containers: 
+    - v0.0.4: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.4'
+    - v0.0.3: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.3'
+    - Development: '!import https://github.com/pgEdge/pgedge-helm.git?branch=main'
 
-  # AI Toolkit
-  - pgEdge Postgres MCP Server: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=main'
-  - pgEdge Anonymizer: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
-  - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
-  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
-  - pgEdge Vectorizer: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=main'
+  - ACE: 
+    - v1.4.2: '!import https://github.com/pgEdge/ace.git?branch=v1.4.2'
+    - v1.4.1: '!import https://github.com/pgEdge/ace.git?branch=v1.4.1'
+    - v1.4.0: '!import https://github.com/pgEdge/ace.git?branch=v1.4.0'
+    - Development: '!import https://github.com/pgEdge/ace.git?branch=main'
+
+  - lolor: 
+    - v1.2.2: '!import https://github.com/pgEdge/lolor.git?branch=v1.2.2'
+    - Development: '!import https://github.com/pgEdge/lolor.git?branch=main'
+
+  - Snowflake: 
+    - v2.4: '!import https://github.com/pgEdge/snowflake.git?branch=v2.4'
+    - Development: '!import https://github.com/pgEdge/snowflake.git?branch=main'
+
+  - Spock v5: 
+    - v5.0.4: '!import https://github.com/pgEdge/spock.git?branch=v5.0.4'
+    - Development: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
+
+  - Control Plane: 
+    - v0.6.0: '!import https://github.com/pgEdge/control-plane.git?branch=v0.6.0'
+    - v0.5.0: '!import https://github.com/pgEdge/control-plane.git?branch=v0.5.0'
+    - Development: '!import https://github.com/pgEdge/control-plane.git?branch=main'
+
+  # AI Toolkit - pgEdge Postgres MCP Server (versioned documentation)
+  # Each version is imported separately to enable version navigation
+  # Latest version first, older versions next, development (main branch) last
+  - pgEdge Postgres MCP Server:
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=main'
+
+  - pgEdge Anonymizer: 
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
+
+  - pgEdge Docloader: 
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-docloader?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
+
+  - pgEdge RAG Server: 
+    - v1.0.0-beta2: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-beta2'
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
+
+  - pgEdge Vectorizer: 
+    - v1.0-beta1: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=main'

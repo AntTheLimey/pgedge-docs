@@ -1,3 +1,4 @@
 site/
 pgedge-docs-venv/
+.venv/
 .claude/settings.local.json
