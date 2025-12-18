@@ -1,5 +1,5 @@
 // Version selector dropdown functionality
-// Handles dropdown toggle, outside clicks, and keyboard navigation
+// Handles dropdown toggle, outside clicks, keyboard navigation, and smart version switching
 (function() {
     let activeSelector = null;
     let activeMenu = null;
@@ -34,6 +34,47 @@
         activeSelector = null;
         activeMenu = null;
         activeToggle = null;
+    }
+
+    // Check if a URL exists (returns a promise)
+    function urlExists(url) {
+        return fetch(url, { method: 'HEAD' })
+            .then(response => response.ok)
+            .catch(() => false);
+    }
+
+    // Handle version link clicks - try same page, fall back to index
+    function handleVersionClick(e) {
+        const link = e.target.closest('.md-version-selector__link');
+        if (!link) return;
+
+        const selector = link.closest('.md-version-selector');
+        if (!selector) return;
+
+        const targetVersion = link.dataset.versionSlug;
+        const docset = link.dataset.docset;
+        const currentSubpath = selector.dataset.currentSubpath;
+
+        // If no subpath or clicking same version, use default link behavior
+        if (!currentSubpath || !targetVersion || !docset) {
+            return;
+        }
+
+        // Prevent default to handle navigation ourselves
+        e.preventDefault();
+
+        const baseUrl = '/' + docset + '/' + targetVersion + '/';
+        const samePageUrl = baseUrl + currentSubpath;
+        const indexUrl = baseUrl;
+
+        // Try the same page first, fall back to index
+        urlExists(samePageUrl).then(exists => {
+            if (exists) {
+                window.location.href = samePageUrl;
+            } else {
+                window.location.href = indexUrl;
+            }
+        });
     }
 
     function initVersionSelectors() {
@@ -73,6 +114,9 @@
                     this.click();
                 }
             });
+
+            // Handle version link clicks for smart switching
+            menu.addEventListener('click', handleVersionClick);
         });
     }
 

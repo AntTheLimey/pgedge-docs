@@ -1,6 +1,6 @@
 <head>
-<meta http-equiv="refresh" content="0; url=latest/">
-<script>window.location.href = "latest/" + window.location.hash;</script>
+<meta http-equiv="refresh" content="0; url=v1-0-0-beta1/">
+<script>window.location.href = "v1-0-0-beta1/" + window.location.hash;</script>
 </head>
 
-Redirecting to [latest version](latest/)...
+Redirecting to [latest version](v1-0-0-beta1/)...

@@ -36,46 +36,9 @@ plugins:
   - gh-admonitions
   - redirects:
       redirect_maps:
-        # ==========================================================================
-        # pgEdge Postgres MCP Server - Versioned Documentation Redirects
-        # ==========================================================================
-        # /latest/ paths redirect to current version (v1-0-0-beta1)
-        # Note: Bare /pgedge-postgres-mcp-server/ redirect is handled by
-        # docs/pgedge-postgres-mcp-server/index.md with JavaScript redirect
-        'pgedge-postgres-mcp-server/latest/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/index.md'
-        'pgedge-postgres-mcp-server/latest/quickstart/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/quickstart/index.md'
-        'pgedge-postgres-mcp-server/latest/changelog/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/changelog/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/authentication/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/authentication/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/cli-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/cli-client/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/configuration/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/configuration/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/deployment/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/deployment/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/mcp-vs-rag/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/mcp-vs-rag/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/security/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/security/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/troubleshooting/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/troubleshooting/index.md'
-        'pgedge-postgres-mcp-server/latest/guide/web-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/guide/web-client/index.md'
-        'pgedge-postgres-mcp-server/latest/advanced/custom-definitions/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/custom-definitions/index.md'
-        'pgedge-postgres-mcp-server/latest/advanced/knowledgebase/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/knowledgebase/index.md'
-        'pgedge-postgres-mcp-server/latest/advanced/llm-proxy/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/advanced/llm-proxy/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/tools/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/tools/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/resources/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/resources/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/prompts/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/prompts/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/examples/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/examples/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/config-examples/server/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/server/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/config-examples/kb-builder/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/kb-builder/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/config-examples/tokens/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/tokens/index.md'
-        'pgedge-postgres-mcp-server/latest/reference/config-examples/cli-client/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/reference/config-examples/cli-client/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/overview/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/overview/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/api-reference/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/api-reference/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/building-chat-clients/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/building-chat-clients/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/mcp-protocol/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/mcp-protocol/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/http-ollama-chatbot/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/http-ollama-chatbot/index.md'
-        'pgedge-postgres-mcp-server/latest/developers/stdio-anthropic-chatbot/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/developers/stdio-anthropic-chatbot/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/architecture/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/ci-cd/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/ci-cd/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/development/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/development/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/internal-architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/internal-architecture/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/internal/kb-builder-architecture/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/internal/kb-builder-architecture/index.md'
-        'pgedge-postgres-mcp-server/latest/contributing/testing/index.md': 'pgedge-postgres-mcp-server/v1-0-0-beta1/contributing/testing/index.md'
+        # Versioned documentation root redirects
+        # Each product root redirects to the latest version
+        # (The actual redirect is handled by docs/<product>/index.md files)
 
 theme:
   name: material
@@ -141,34 +104,21 @@ extra:
   certmanager_manifest_url: https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml
   control_plane_version: v0.5.1
 
-  # Versioned documentation configuration
-  # Maps docset base paths to their available versions
-  # Note: version paths are slugified by MkDocs (dots become dashes)
-  versioned_docs:
-    pgedge-postgres-mcp-server:
-      current: v1-0-0-beta1
-      versions:
-        - version: v1-0-0-beta1
-          title: v1.0.0-beta1 (Latest)
-          branch: v1.0.0-beta1
-        - version: v1-0-0-alpha6
-          title: v1.0.0-alpha6
-          branch: v1.0.0-alpha6
-        - version: v1-0-0-alpha5
-          title: v1.0.0-alpha5
-          branch: v1.0.0-alpha5
-        - version: v1-0-0-alpha4
-          title: v1.0.0-alpha4
-          branch: v1.0.0-alpha4
-        - version: v1-0-0-alpha3
-          title: v1.0.0-alpha3
-          branch: v1.0.0-alpha3
-        - version: v1-0-0-alpha2
-          title: v1.0.0-alpha2
-          branch: v1.0.0-alpha2
-        - version: v1-0-0-alpha1
-          title: v1.0.0-alpha1
-          branch: v1.0.0-alpha1
+  # Versioned documentation - list docsets that have multiple versions
+  # Versions are auto-detected from nav structure
+  # Convention: first version = latest, "Development" = unstable/main branch
+  versioned_docsets:
+    - pgedge-containers
+    - ace
+    - lolor
+    - snowflake
+    - spock-v5
+    - control-plane
+    - pgedge-postgres-mcp-server
+    - pgedge-anonymizer
+    - pgedge-docloader
+    - pgedge-rag-server
+    - pgedge-vectorizer
 
   # Navigation dropdown categories - maps nav item titles to dropdown menus
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
@@ -177,15 +127,22 @@ extra:
       - pgEdge Enterprise Postgres
       - pgEdge Distributed Postgres
       - pgEdge Cloud
-      - pgEdge Containers
+      - title: pgEdge Containers
+        url: pgedge-containers/
     Extensions:
-      - ACE
-      - lolor
-      - Snowflake
-      - Spock v5
-      - pgEdge Vectorizer
+      - title: ACE
+        url: ace/
+      - title: lolor
+        url: lolor/
+      - title: Snowflake
+        url: snowflake/
+      - title: Spock v5
+        url: spock-v5/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
     Tools:
-      - Control Plane
+      - title: Control Plane
+        url: control-plane/
       - title: pgEdge Anonymizer
         url: pgedge-anonymizer/
       - title: pgEdge Docloader
@@ -419,24 +376,54 @@ nav:
 
   # Pinned to latest release - this should be updated when a new release is cut
   # Macro variables under extra also need to be updated, if changed
-  - pgEdge Containers: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.4'
-  - ACE: '!import https://github.com/pgEdge/ace.git?branch=main'
-  - lolor: '!import https://github.com/pgEdge/lolor.git?branch=main'
-  - Snowflake: '!import https://github.com/pgEdge/snowflake.git?branch=main'
-  - Spock v5: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
-  - Control Plane: '!import https://github.com/pgEdge/control-plane.git?branch=main'
+  - pgEdge Containers: 
+    - v0.0.4: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.4'
+    - v0.0.3: '!import https://github.com/pgEdge/pgedge-helm.git?branch=v0.0.3'
+    - Development: '!import https://github.com/pgEdge/pgedge-helm.git?branch=main'
+
+  - ACE: 
+    - v1.4.2: '!import https://github.com/pgEdge/ace.git?branch=v1.4.2'
+    - v1.4.1: '!import https://github.com/pgEdge/ace.git?branch=v1.4.1'
+    - v1.4.0: '!import https://github.com/pgEdge/ace.git?branch=v1.4.0'
+    - Development: '!import https://github.com/pgEdge/ace.git?branch=main'
+
+  - lolor: 
+    - v1.2.2: '!import https://github.com/pgEdge/lolor.git?branch=v1.2.2'
+    - Development: '!import https://github.com/pgEdge/lolor.git?branch=main'
+
+  - Snowflake: 
+    - v2.4: '!import https://github.com/pgEdge/snowflake.git?branch=v2.4'
+    - Development: '!import https://github.com/pgEdge/snowflake.git?branch=main'
+
+  - Spock v5: 
+    - v5.0.4: '!import https://github.com/pgEdge/spock.git?branch=v5.0.4'
+    - Development: '!import https://github.com/pgEdge/spock.git?branch=v5_STABLE'
+
+  - Control Plane: 
+    - v0.6.0: '!import https://github.com/pgEdge/control-plane.git?branch=v0.6.0'
+    - v0.5.0: '!import https://github.com/pgEdge/control-plane.git?branch=v0.5.0'
+    - Development: '!import https://github.com/pgEdge/control-plane.git?branch=main'
 
   # AI Toolkit - pgEdge Postgres MCP Server (versioned documentation)
   # Each version is imported separately to enable version navigation
+  # Latest version first, older versions next, development (main branch) last
   - pgEdge Postgres MCP Server:
     - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-beta1'
-    - v1.0.0-alpha6: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha6'
-    - v1.0.0-alpha5: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha5'
-    - v1.0.0-alpha4: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha4'
-    - v1.0.0-alpha3: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha3'
-    - v1.0.0-alpha2: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha2'
-    - v1.0.0-alpha1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-alpha1'
-  - pgEdge Anonymizer: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
-  - pgEdge Docloader: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
-  - pgEdge RAG Server: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
-  - pgEdge Vectorizer: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=main'
+    - Development: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=main'
+
+  - pgEdge Anonymizer: 
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-anonymizer?branch=main'
+
+  - pgEdge Docloader: 
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-docloader?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-docloader?branch=main'
+
+  - pgEdge RAG Server: 
+    - v1.0.0-beta2: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-beta2'
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-rag-server?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
+
+  - pgEdge Vectorizer: 
+    - v1.0-beta1: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=main'
