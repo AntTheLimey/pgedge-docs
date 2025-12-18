@@ -8,6 +8,22 @@
 
 {# Build version redirect data for JavaScript #}
 {% set versioned_docsets = config.extra.versioned_docsets or [] %}
+{# Pre-build the docset to version mapping #}
+{% set ns_global = namespace(docset_versions=[]) %}
+{% for docset_slug in versioned_docsets %}
+  {% for nav_item in nav %}
+    {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
+    {% if nav_title_slug == docset_slug and nav_item.children %}
+      {% set ns = namespace(latest='') %}
+      {% for child in nav_item.children %}
+        {% if child.title != 'Development' and not ns.latest %}
+          {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
+        {% endif %}
+      {% endfor %}
+      {% set ns_global.docset_versions = ns_global.docset_versions + [(docset_slug, ns.latest)] %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
 <script>
 (function() {
     var notFoundContent = document.getElementById('not-found-content');
@@ -19,19 +35,8 @@
     // Versioned docset redirect configuration
     // Auto-generated from nav structure
     var versionedDocsets = {
-        {% for docset_slug in versioned_docsets %}
-        {% for nav_item in nav %}
-        {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
-        {% if nav_title_slug == docset_slug and nav_item.children %}
-        {% set ns = namespace(latest='') %}
-        {% for child in nav_item.children %}
-        {% if child.title != 'Development' and not ns.latest %}
-        {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
-        {% endif %}
-        {% endfor %}
-        '{{ docset_slug }}': '{{ ns.latest }}'{% if not loop.last %},{% endif %}
-        {% endif %}
-        {% endfor %}
+        {% for item in ns_global.docset_versions %}
+        '{{ item[0] }}': '{{ item[1] }}'{% if not loop.last %},{% endif %}
         {% endfor %}
     };
 
