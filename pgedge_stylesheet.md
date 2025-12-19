@@ -14,8 +14,9 @@ Each file should have one first level heading, and multiple second level heading
 
 Each heading should have an introductory sentence or paragraph that explains the feature shown/discussed in the following section.
 
-If the page has a 'Features' section following the introductory paragraph, it should not start with a heading; instead use a sentence in the form:  "The MCP Server includes the following features:", followed by a bulleted list of the features.
+If the page has a 'Features' section following the introductory paragraph, it should not start with a heading; instead use a sentence in the form:  "The MCP Server includes the following features:", followed by a bulleted list of the features.  When formatting a bulleted list:
 
+* Always leave a blank line before the first item in any list or sub-list (a sub-list may be code or indented bullets under a bullet item).
 * Each entry in a bulleted list should be a complete sentence with articles.
 * Do not use bold font bullet items.
 * Do not use a numbered list unless the steps in the list need to be performed in order.
@@ -35,9 +36,12 @@ SELECT * FROM code;
 Capitalize command keywords; lowercase variables.
 
 Include links to third-party software installation/documentation pages in the Prerequisites section.
+
 Include links to our Github repo when we refer to cloning the repo, or working on the project.
 
-LICENCE.md should live in the docs folder in each repo.  Create a symlink to that file from the repo root.
+LICENCE.md should live in the docs folder and in the root of each repo.  Create a copy of the LICENCE.md file in the docs folder if there isn't one there already.
+
+Do not create links to github.io.
 
 
 
@@ -46,6 +50,7 @@ README.md file notes:
 
 At the top of each README file:
 
+* Include Github Action badges for important actions in use by the repository.
 * Include test deployment links (if used for the project).
 * Include a Table of Contents that mimics the nav section of the mkdocs.yaml file.
 * After the TOC include a link to the online docs, hosted at docs.pgedge.com.
