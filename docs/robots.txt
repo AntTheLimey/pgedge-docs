@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+
+# Block URLs with HubSpot tracking parameters
+Disallow: /*?*__hstc=*
+Disallow: /*?*__hssc=*
+Disallow: /*?*__hsfp=*
+
+# Allow everything else
+Allow: /
+
+# Sitemap location
+Sitemap: https://docs.pgedge.com/sitemap.xml
