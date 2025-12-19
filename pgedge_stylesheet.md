@@ -14,7 +14,7 @@ Each file should have one first level heading, and multiple second level heading
 
 Each heading should have an introductory sentence or paragraph that explains the feature shown/discussed in the following section.
 
-If the page has a 'Features' section following the introductory paragraph, it should not start with a heading; instead use a sentence in the form:  "The MCP Server includes the following features:", followed by a bulleted list of the features.  When formatting a bulleted list:
+If the page has a `Features` or `Overview` section following the introductory paragraph, it should not start with a heading; instead use a sentence in the form:  "The MCP Server includes the following features:", followed by a bulleted list of the features.  When formatting a bulleted list:
 
 * Always leave a blank line before the first item in any list or sub-list (a sub-list may be code or indented bullets under a bullet item).
 * Each entry in a bulleted list should be a complete sentence with articles.
@@ -32,6 +32,8 @@ SELECT * FROM code;
 SELECT * FROM code;
 SELECT * FROM code;
 ```
+
+`stdio`, `stdin`, `stdout`, and `stderr` should be in courier (enclosed in backticks).
 
 Capitalize command keywords; lowercase variables.
 
