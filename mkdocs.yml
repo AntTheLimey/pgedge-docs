@@ -125,25 +125,25 @@ extra:
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
   nav_categories:
     Products:
-      - pgEdge Enterprise Postgres
-      - pgEdge Distributed Postgres
       - pgEdge Cloud
       - title: pgEdge Containers
         url: pgedge-containers/
+      - pgEdge Distributed Postgres
+      - pgEdge Enterprise Postgres
     Extensions:
-      - title: lolor
+      - title: Lolor
         url: lolor/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
       - title: Snowflake
         url: snowflake/
       - title: Spock v5
         url: spock-v5/
-      - title: pgEdge Vectorizer
-        url: pgedge-vectorizer/
     Tools:
-      - title: Control Plane
-        url: control-plane/
       - title: ACE
         url: ace/
+      - title: Control Plane
+        url: control-plane/
       - title: pgEdge Anonymizer
         url: pgedge-anonymizer/
       - title: pgEdge Docloader
