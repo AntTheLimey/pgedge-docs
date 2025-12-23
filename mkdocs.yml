@@ -131,7 +131,7 @@ extra:
       - pgEdge Distributed Postgres
       - pgEdge Enterprise Postgres
     Extensions:
-      - title: Lolor
+      - title: lolor
         url: lolor/
       - title: pgEdge Vectorizer
         url: pgedge-vectorizer/
