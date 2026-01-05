@@ -4,3 +4,19 @@ pgedge-docs-venv/
 .claude/settings.local.json
 __pycache__/
 *.pyc
+
+# Auto-generated redirect files for versioned docsets
+# These are created by hooks/versioned_redirects.py at build time
+docs/ace/index.md
+docs/control-plane/index.md
+docs/lolor/index.md
+docs/pgedge-anonymizer/index.md
+docs/pgedge-containers/index.md
+docs/pgedge-docloader/index.md
+docs/pgedge-loadgen/index.md
+docs/pgedge-postgres-mcp-server/index.md
+docs/pgedge-rag-server/index.md
+docs/pgedge-vectorizer/index.md
+docs/radar/index.md
+docs/snowflake/index.md
+docs/spock-v5/index.md

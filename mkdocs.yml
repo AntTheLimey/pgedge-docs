@@ -12,6 +12,9 @@ extra_javascript:
   - javascripts/org-stars.js
   - javascripts/version-selector.js
 
+hooks:
+  - hooks/versioned_redirects.py
+
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -51,7 +54,7 @@ theme:
 
   features:
     - navigation.tabs
-    - navigation.instant
+    # - navigation.instant  # Disabled - causes logo flash on redirect pages
     - navigation.tracking
     - navigation.prune
     - navigation.top

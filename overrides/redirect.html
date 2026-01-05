@@ -1,41 +1,36 @@
+{#
+  Redirect template for versioned docsets.
+  Automatically redirects to the latest version based on nav structure.
+
+  This template outputs a minimal redirect page with JavaScript executing
+  before any other content loads.
+#}
+{%- set versioned_docsets = config.extra.versioned_docsets or [] -%}
+{%- set current_path = page.url | default('') -%}
+{%- set ns = namespace(redirect_url='', docset='') -%}
+{%- for docset_slug in versioned_docsets -%}
+  {%- if current_path.startswith(docset_slug ~ '/') or current_path == docset_slug ~ '/' -%}
+    {%- set ns.docset = docset_slug -%}
+    {%- for nav_item in nav -%}
+      {%- set nav_title_slug = nav_item.title | lower | replace(' ', '-') -%}
+      {%- if nav_title_slug == docset_slug and nav_item.children -%}
+        {%- for child in nav_item.children -%}
+          {%- if child.title != 'Development' and not ns.redirect_url -%}
+            {%- set ns.redirect_url = '/' ~ docset_slug ~ '/' ~ (child.title | lower | replace('.', '-') | replace(' ', '-')) ~ '/' -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endfor -%}
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-  {#
-    Redirect template for versioned docsets.
-    Automatically redirects to the latest version based on nav structure.
-
-    This is a standalone template (doesn't extend base.html) to avoid
-    flashing the site layout before redirect.
-  #}
-  {% set versioned_docsets = config.extra.versioned_docsets or [] %}
-  {% set current_path = page.url | default('') %}
-
-  {% for docset_slug in versioned_docsets %}
-    {% if current_path.startswith(docset_slug ~ '/') or current_path == docset_slug ~ '/' %}
-      {% for nav_item in nav %}
-        {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
-        {% if nav_title_slug == docset_slug and nav_item.children %}
-          {% set ns = namespace(latest='') %}
-          {% for child in nav_item.children %}
-            {% if child.title != 'Development' and not ns.latest %}
-              {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
-            {% endif %}
-          {% endfor %}
-          {% if ns.latest %}
-            {% set redirect_url = '/' ~ docset_slug ~ '/' ~ ns.latest ~ '/' %}
-  <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
-  <link rel="canonical" href="{{ config.site_url }}{{ docset_slug }}/">
-  <script>window.location.replace("{{ redirect_url }}" + window.location.hash);</script>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  {% endfor %}
+<script>window.location.replace("{{ ns.redirect_url }}" + window.location.hash);</script>
+<meta http-equiv="refresh" content="0; url={{ ns.redirect_url }}">
+<link rel="canonical" href="{{ config.site_url }}{{ ns.docset }}/">
+<meta charset="utf-8">
+<title>Redirecting...</title>
 </head>
-<body>
-  <p>Redirecting to latest version...</p>
-</body>
+<body></body>
 </html>
