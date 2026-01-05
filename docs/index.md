@@ -35,3 +35,9 @@ pgEdge Enterprise Postgres and pgEdge Distributed Postgres bring advanced multi-
 * [pgEdge Vectorizer](pgedge-vectorizer/index.md): A Postgres extension for chunking and vectorising documents in Postgres for semantic search with pgvector.
 
 The AI-enabling extensions used by the pgEdge Agentic AI Toolkit are distributed via the [pgEdge Enterprise Postgres](enterprise/index.md) Repository, and are built into the standard images used by the [Control Plane](control-plane/index.md) and the [pgEdge Containers HELM chart](pgedge-containers/index.md).
+
+## pgEdge Tools
+
+Useful tools and utilities from the development team at pgEdge:
+
+* [radar](radar/index.md): Agentless, zero-dependency diagnostic data collection tool for PostgreSQL and system metrics.

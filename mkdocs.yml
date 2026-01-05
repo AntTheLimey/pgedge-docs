@@ -120,6 +120,7 @@ extra:
     - pgedge-docloader
     - pgedge-rag-server
     - pgedge-vectorizer
+    - radar
 
   # Navigation dropdown categories - maps nav item titles to dropdown menus
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
@@ -152,8 +153,10 @@ extra:
         url: pgedge-postgres-mcp-server/
       - title: pgEdge RAG Server
         url: pgedge-rag-server/
+      - title: Radar
+        url: radar/
 
-copyright: Copyright &copy; 2023 - 2025 pgEdge, Inc –
+copyright: Copyright &copy; 2023 - 2026, pgEdge, Inc –
   <a href="#__consent">Change cookie settings</a>
 repo_url: https://github.com/pgEdge
 
@@ -403,6 +406,10 @@ nav:
   - Control Plane:
     - v0.6: '!import https://github.com/pgEdge/control-plane.git?branch=v0.6.2'
     - Development: '!import https://github.com/pgEdge/control-plane.git?branch=main'
+
+  - Radar: 
+    - v0.1.0: '!import https://github.com/pgEdge/radar?branch=v0.1.0'
+    - Development: '!import https://github.com/pgEdge/radar?branch=main'
 
   # AI Toolkit - pgEdge Postgres MCP Server (versioned documentation)
   # Each version is imported separately to enable version navigation
