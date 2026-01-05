@@ -1,41 +1,41 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  {#
+    Redirect template for versioned docsets.
+    Automatically redirects to the latest version based on nav structure.
 
-{#
-  Redirect template for versioned docsets.
-  Automatically redirects to the latest version based on nav structure.
+    This is a standalone template (doesn't extend base.html) to avoid
+    flashing the site layout before redirect.
+  #}
+  {% set versioned_docsets = config.extra.versioned_docsets or [] %}
+  {% set current_path = page.url | default('') %}
 
-  Usage: Set page metadata template: redirect.html
-#}
-
-{% block htmltitle %}Redirecting...{% endblock %}
-
-{% block content %}
-{% set versioned_docsets = config.extra.versioned_docsets or [] %}
-{% set current_path = page.url | default('') %}
-
-{# Find which docset this page belongs to #}
-{% for docset_slug in versioned_docsets %}
-  {% if current_path.startswith(docset_slug ~ '/') or current_path == docset_slug ~ '/' %}
-    {# Find the latest version from nav #}
-    {% for nav_item in nav %}
-      {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
-      {% if nav_title_slug == docset_slug and nav_item.children %}
-        {# First non-Development child is the latest version #}
-        {% set ns = namespace(latest='') %}
-        {% for child in nav_item.children %}
-          {% if child.title != 'Development' and not ns.latest %}
-            {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
+  {% for docset_slug in versioned_docsets %}
+    {% if current_path.startswith(docset_slug ~ '/') or current_path == docset_slug ~ '/' %}
+      {% for nav_item in nav %}
+        {% set nav_title_slug = nav_item.title | lower | replace(' ', '-') %}
+        {% if nav_title_slug == docset_slug and nav_item.children %}
+          {% set ns = namespace(latest='') %}
+          {% for child in nav_item.children %}
+            {% if child.title != 'Development' and not ns.latest %}
+              {% set ns.latest = child.title | lower | replace('.', '-') | replace(' ', '-') %}
+            {% endif %}
+          {% endfor %}
+          {% if ns.latest %}
+            {% set redirect_url = '/' ~ docset_slug ~ '/' ~ ns.latest ~ '/' %}
+  <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
+  <link rel="canonical" href="{{ config.site_url }}{{ docset_slug }}/">
+  <script>window.location.replace("{{ redirect_url }}" + window.location.hash);</script>
           {% endif %}
-        {% endfor %}
-
-        {% if ns.latest %}
-          {% set redirect_url = '/' ~ docset_slug ~ '/' ~ ns.latest ~ '/' %}
-          <meta http-equiv="refresh" content="0; url={{ redirect_url }}">
-          <script>window.location.href = "{{ redirect_url }}" + window.location.hash;</script>
-          <p>Redirecting to <a href="{{ redirect_url }}">latest version ({{ ns.latest }})</a>...</p>
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-{% endblock %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+</head>
+<body>
+  <p>Redirecting to latest version...</p>
+</body>
+</html>
