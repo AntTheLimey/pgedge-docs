@@ -118,6 +118,7 @@ extra:
     - pgedge-postgres-mcp-server
     - pgedge-anonymizer
     - pgedge-docloader
+    - pgedge-loadgen
     - pgedge-rag-server
     - pgedge-vectorizer
     - radar
@@ -149,6 +150,8 @@ extra:
         url: pgedge-anonymizer/
       - title: pgEdge Docloader
         url: pgedge-docloader/
+      - title: pgEdge Loadgen
+        url: pgedge-loadgen/
       - title: pgEdge Postgres MCP Server
         url: pgedge-postgres-mcp-server/
       - title: pgEdge RAG Server
@@ -410,6 +413,10 @@ nav:
   - Radar: 
     - v0.1.0: '!import https://github.com/pgEdge/radar?branch=v0.1.0'
     - Development: '!import https://github.com/pgEdge/radar?branch=main'
+
+  - pgEdge Loadgen: 
+    - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-loadgen?branch=v1.0.0-beta1'
+    - Development: '!import https://github.com/pgEdge/pgedge-loadgen?branch=main'
 
   # AI Toolkit - pgEdge Postgres MCP Server (versioned documentation)
   # Each version is imported separately to enable version navigation

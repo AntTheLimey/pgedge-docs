@@ -40,4 +40,5 @@ The AI-enabling extensions used by the pgEdge Agentic AI Toolkit are distributed
 
 Useful tools and utilities from the development team at pgEdge:
 
+* [pgedge-loadgen](pgedge-loadgen/index.md): A CLI tool for generating realistic PostgreSQL workloads. Creates schemas for fictional applications, populates them with test data, and runs load simulations with temporal usage patterns.
 * [radar](radar/index.md): Agentless, zero-dependency diagnostic data collection tool for PostgreSQL and system metrics.
