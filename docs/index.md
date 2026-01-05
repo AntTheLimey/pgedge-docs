@@ -36,7 +36,7 @@ pgEdge Enterprise Postgres and pgEdge Distributed Postgres bring advanced multi-
 
 The AI-enabling extensions used by the pgEdge Agentic AI Toolkit are distributed via the [pgEdge Enterprise Postgres](enterprise/index.md) Repository, and are built into the standard images used by the [Control Plane](control-plane/index.md) and the [pgEdge Containers HELM chart](pgedge-containers/index.md).
 
-## pgEdge Tools
+## pgEdge Tools and Utilities
 
 Useful tools and utilities from the development team at pgEdge:
 
