@@ -2,7 +2,9 @@ site_name: pgEdge Documentation
 site_url: https://docs.pgedge.com
 
 extra_css:
+  - https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400&display=swap
   - stylesheets/extra.css
+  - stylesheets/custom-theme.css
 
 extra_javascript:
   # Pulled from control-plane repo for install page
@@ -126,41 +128,42 @@ extra:
     - pgedge-vectorizer
     - radar
 
-  # Navigation dropdown categories - maps nav item titles to dropdown menus
+  # Navigation dropdown categories - reorganized to match Lovable prototype
+  # 6 main sections with components grouped by deployment/usage pattern
   # Use simple string for auto-detected URLs, or {title: url} for explicit URLs
   nav_categories:
-    Products:
-      - pgEdge Cloud
-      - title: pgEdge Containers
-        url: pgedge-containers/
-      - pgEdge Distributed Postgres
+    VM / Bare Metal:
       - pgEdge Enterprise Postgres
-    Extensions:
-      - title: lolor
-        url: lolor/
-      - title: pgEdge Vectorizer
-        url: pgedge-vectorizer/
-      - title: Snowflake
-        url: snowflake/
-      - title: Spock v5
-        url: spock-v5/
-    Tools:
-      - title: ACE
-        url: ace/
+      - pgEdge Distributed Postgres
       - title: Control Plane
         url: control-plane/
-      - title: pgEdge Anonymizer
-        url: pgedge-anonymizer/
-      - title: pgEdge Docloader
-        url: pgedge-docloader/
-      - title: pgEdge Loadgen
-        url: pgedge-loadgen/
+      - title: ACE
+        url: ace/
+    Containers / Kubernetes:
+      - title: pgEdge Containers
+        url: pgedge-containers/
+    pgEdge Cloud (DBaaS):
+      - pgEdge Cloud
+    AI Toolkit:
       - title: pgEdge Postgres MCP Server
         url: pgedge-postgres-mcp-server/
       - title: pgEdge RAG Server
         url: pgedge-rag-server/
-      - title: Radar
-        url: radar/
+      - title: pgEdge Anonymizer
+        url: pgedge-anonymizer/
+      - title: pgEdge Docloader
+        url: pgedge-docloader/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
+    Postgres Extensions:
+      - title: Spock v5
+        url: spock-v5/
+      - title: lolor
+        url: lolor/
+      - title: Snowflake
+        url: snowflake/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
 
 copyright: Copyright &copy; 2023 - 2026, pgEdge, Inc –
   <a href="#__consent">Change cookie settings</a>
