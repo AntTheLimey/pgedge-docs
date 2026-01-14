@@ -325,3 +325,77 @@
     color: #fff;
 }
 
+/* ==========================================================================
+   Discord Button Styles
+   ========================================================================== */
+
+/* Header source container - ensure horizontal layout and no clipping */
+.md-header__inner {
+    overflow: visible !important;
+}
+
+.md-header__source {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    overflow: visible !important;
+    max-width: none !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* Ensure GitHub button doesn't get clipped */
+.md-header__source .md-source {
+    overflow: visible !important;
+    max-width: none !important;
+}
+
+.md-source__repository {
+    overflow: visible !important;
+    max-width: none !important;
+}
+
+.md-source__facts {
+    overflow: visible !important;
+}
+
+/* Discord button in header - icon only, positioned left of GitHub */
+.md-source--discord {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-right: 0.2rem;
+    background-color: transparent;
+    transition: opacity 250ms;
+    flex-shrink: 0;
+}
+
+.md-source--discord:hover {
+    opacity: 0.7;
+}
+
+/* Discord icon styling - match GitHub icon size */
+.md-source--discord .md-source__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.6rem;
+}
+
+.md-source--discord .md-source__icon svg {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Light mode - Discord button */
+[data-md-color-scheme="default"] .md-source--discord .md-source__icon svg {
+    fill: var(--md-default-fg-color);
+}
+
+/* Dark mode - Discord button */
+[data-md-color-scheme="slate"] .md-source--discord .md-source__icon svg {
+    fill: var(--md-primary-bg-color);
+}
+
