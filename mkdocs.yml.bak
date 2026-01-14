@@ -56,7 +56,6 @@ theme:
 
   features:
     - navigation.tabs
-    - navigation.tabs.sticky
     # - navigation.instant  # Disabled - causes logo flash on redirect pages
     - navigation.tracking
     - navigation.prune
