@@ -223,3 +223,94 @@ html body .md-nav--primary > .md-nav__list > .md-nav__item .md-nav .md-nav .md-n
 html body .md-nav--primary > .md-nav__list > .md-nav__item .md-nav .md-nav .md-nav .md-nav__link {
   padding-left: 48px !important;
 }
+
+/* ===== MEDIA QUERY OVERRIDES - Apply at all screen sizes ===== */
+/* Material uses @media screen and (min-width:76.25em) which adds extra height */
+/* We need to override at ALL breakpoints */
+
+@media screen and (min-width: 60em) {
+  html body .md-header,
+  html body .md-header.md-header--shadow,
+  html body .md-header.md-header--lifted,
+  html body header.md-header {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+    max-height: 3.5rem !important;
+  }
+
+  html body .md-header__inner,
+  html body nav.md-header__inner {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+    max-height: 3.5rem !important;
+  }
+
+  html body .md-header__title {
+    height: 3.5rem !important;
+    line-height: 3.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  html body .md-search__form {
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    max-height: 2.5rem !important;
+  }
+
+  html body .md-search__input {
+    height: 2.5rem !important;
+  }
+
+  html body .md-tabs {
+    position: sticky !important;
+    top: 3.5rem !important;
+  }
+
+  html body .md-sidebar--primary {
+    width: 16rem !important;
+  }
+}
+
+@media screen and (min-width: 76.25em) {
+  html body .md-header,
+  html body .md-header.md-header--shadow,
+  html body .md-header.md-header--lifted,
+  html body header.md-header {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+    max-height: 3.5rem !important;
+  }
+
+  html body .md-header__inner,
+  html body nav.md-header__inner {
+    height: 3.5rem !important;
+    min-height: 3.5rem !important;
+    max-height: 3.5rem !important;
+    padding: 0 1.5rem !important;
+  }
+
+  html body .md-header__title {
+    height: 3.5rem !important;
+    line-height: 3.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  html body .md-search__form {
+    height: 2.5rem !important;
+    min-height: 2.5rem !important;
+    max-height: 2.5rem !important;
+  }
+
+  html body .md-search__input {
+    height: 2.5rem !important;
+  }
+
+  html body .md-tabs {
+    position: sticky !important;
+    top: 3.5rem !important;
+  }
+
+  html body .md-sidebar--primary {
+    width: 16rem !important;
+  }
+}
