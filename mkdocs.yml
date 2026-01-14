@@ -79,6 +79,7 @@ theme:
         name: Switch to system preference
 
 extra:
+  discord_url: https://discord.com/invite/pgedge/login
   generator: false
   analytics:
     provider: google
