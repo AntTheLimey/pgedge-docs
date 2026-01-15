@@ -4,6 +4,8 @@ Apply this stylesheet to .md files only!
 
 Document files should be named in the form my_file.md, and docs for each project should like in the `docs` folder (or sub-directories).
 
+Wrap lines to 79 characters long, but keep standard inline markdown links all be on the same line.
+
 Write in active voice.
 Use full and grammatically correct sentences that are between 7 and 20 words long.
 Use a semi-colon to link similar ideas or manage sentences that are getting over-long.
