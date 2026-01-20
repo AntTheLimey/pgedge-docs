@@ -415,6 +415,7 @@ nav:
     - Development: '!import https://github.com/pgEdge/control-plane.git?branch=main'
 
   - Radar: 
+    - v0.2.2: '!import https://github.com/pgEdge/radar?branch=v0.2.2'
     - v0.1.0: '!import https://github.com/pgEdge/radar?branch=v0.1.0'
     - Development: '!import https://github.com/pgEdge/radar?branch=main'
 
@@ -426,6 +427,7 @@ nav:
   # Each version is imported separately to enable version navigation
   # Latest version first, older versions next, development (main branch) last
   - pgEdge Postgres MCP Server:
+    - v1.0.0-beta2: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-beta2'
     - v1.0.0-beta1: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=v1.0.0-beta1'
     - Development: '!import https://github.com/pgEdge/pgedge-postgres-mcp?branch=main'
 
@@ -444,5 +446,6 @@ nav:
     - Development: '!import https://github.com/pgEdge/pgedge-rag-server?branch=main'
 
   - pgEdge Vectorizer:
+    - v1.0-beta2: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-beta2'
     - v1.0-beta1: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=v1.0-beta1'
     - Development: '!import https://github.com/pgEdge/pgedge-vectorizer?branch=main'
