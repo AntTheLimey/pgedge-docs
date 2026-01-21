@@ -135,7 +135,7 @@ extra:
         url: control-plane/
       - title: Distributed CLI
         url: platform/
-      - title: Package Repository
+      - title: pgEdge Package Repository
         url: enterprise/
       - title: Ansible
         url: ansible/
@@ -181,8 +181,11 @@ nav:
 
   - Ansible: ansible/index.md
 
-  - Container Images: container-images/index.md
-
+  - Container Images: 
+    - pgEdge Container Images: container-images/index.md
+    - Available Images: container-images/images.md
+    - Pulling a Container Image: container-images/pulling.md
+    - Running a pgEdge Container: container-images/running.md
   - pgEdge Enterprise Postgres:
     - Enterprise Edition: enterprise/index.md
     - Enterprise Linux 9 & 10:
