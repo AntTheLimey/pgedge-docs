@@ -1,8 +1,21 @@
 # Configuring Supporting Components
 
-Many of the supporting components distributed via the `pgedge` repository follow standard configuration and usage as documented by their open-source projects.
+Many of the supporting components distributed via the `pgedge` repository
+follow standard configuration and usage as documented by their open-source
+projects.
 
-Package names and links to the component documentation are noted in the table below. `XX` in the package name indicates the package version; substitute your preferred version into the package name (i.e. pgedge-postgresql-18-snowflake) when installing the package to ensure you've installed the version that matches your copy of Postgres.
+To review a list of packages available from the `pgedge` repository, use the
+command:
+
+  ```bash
+  apt list | grep pgedge-*
+  ```
+
+Package names and links to the component documentation are noted in the table
+below. `XX` in the package name indicates the package version; substitute your
+preferred version into the package name (i.e. pgedge-postgresql-18-snowflake)
+when installing the package to ensure you've installed the version that
+matches your copy of Postgres.
 
 | Component | Package | Description | Info |
 |-----------|---------|-------------|------|
@@ -51,17 +64,21 @@ Package names and links to the component documentation are noted in the table be
 
 ## Using pgBouncer with pgEdge Enterprise Postgres
 
-PgBouncer is a lightweight connection pooler designed to work with Postgres. After configuring the `pgedge` repo, you can install PgBouncer with the command:
+PgBouncer is a lightweight connection pooler designed to work with Postgres.
+After configuring the `pgedge` repo, you can install PgBouncer with the
+command:
 
 `sudo apt-get update`
 
 `sudo apt-get install -y pgedge-pgbouncer`
 
-After installing pgBouncer, copy the sample `userlist.txt` to the PgBouncer configuration directory:
+After installing pgBouncer, copy the sample `userlist.txt` to the PgBouncer
+configuration directory:
 
 `sudo cp /usr/share/doc/pgbouncer/userlist.txt /etc/pgbouncer/`
 
-Next, edit `/etc/pgbouncer/userlist.txt` and add your database user credentials. Entries in the file take the form:
+Next, edit `/etc/pgbouncer/userlist.txt` and add your database user
+credentials. Entries in the file take the form:
 
 `"postgres" "your_password_here"`
 
@@ -69,18 +86,25 @@ Next, make sure the file has the correct permissions; use the command:
 
 `sudo chown pgbouncer:pgbouncer /etc/pgbouncer/userlist.txt sudo chmod 600 /etc/pgbouncer/userlist.txt`
 
-Before using pgBouncer, you'll need to share system configuration details in the `/etc/pgbouncer/pgbouncer.ini` file; modify the file to match your system. Provide database connection info, listener port, and other options as needed.
+Before using pgBouncer, you'll need to share system configuration details in
+the `/etc/pgbouncer/pgbouncer.ini` file; modify the file to match your
+system. Provide database connection info, listener port, and other options as
+needed.
 
-Next, ensure that your Postgres server is up and running on the target port and start and enable the PgBouncer service with the command:
+Next, ensure that your Postgres server is up and running on the target port
+and start and enable the PgBouncer service with the command:
 
 `sudo systemctl start pgbouncer && sudo systemctl enable pgbouncer`
 
-You can use the following command to check the status of the pgBouncer service:
+You can use the following command to check the status of the pgBouncer
+service:
 
 `sudo systemctl status pgbouncer`
 
-To connect to your Postgres database through PgBouncer connection pooling, use the command:
+To connect to your Postgres database through PgBouncer connection pooling,
+use the command:
 
 `psql -p 6432 -U your_username -d pgbouncer`
 
-Note that `your_username` is a database user included in the `/etc/pgbouncer/userlist.txt` file.
+Note that `your_username` is a database user included in the
+`/etc/pgbouncer/userlist.txt` file.

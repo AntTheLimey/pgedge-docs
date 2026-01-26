@@ -136,6 +136,17 @@ extra:
         url: pgedge-containers/
       - pgEdge Distributed Postgres
       - pgEdge Enterprise Postgres
+    AI Toolkit:
+      - title: pgEdge Postgres MCP Server
+        url: pgedge-postgres-mcp-server/
+      - title: pgEdge Anonymizer
+        url: pgedge-anonymizer/
+      - title: pgEdge RAG Server
+        url: pgedge-rag-server/
+      - title: pgEdge Docloader
+        url: pgedge-docloader/
+      - title: pgEdge Vectorizer
+        url: pgedge-vectorizer/
     Extensions:
       - title: lolor
         url: lolor/
