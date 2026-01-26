@@ -4,6 +4,11 @@ pgEdge makes packages available via the `pgedge` repository to provide a simplif
 
 * Postgres Versions 16, 17, and 18
 * Spock Version 5.0
+* pgEdge Postgres MCP Server
+* pgEdge RAG Server
+* pgEdge Anonymizer
+* pgEdge Docloader
+* pgEdge Vectorizer
 * Lolor (large object support)
 * Snowflake (sequence support)
 * pgAdmin (graphical client)

@@ -4,6 +4,13 @@ Many of the supporting components distributed via the `pgedge` repository
 follow standard configuration and usage as documented by their open-source
 projects.
 
+To review a list of packages available from the `pgedge` repository, use the 
+command:
+
+  ```bash
+  apt list | grep pgedge-*
+  ```
+
 Package names and links to the component documentation are noted in the
 table below. `_XX` after the package name indicates the package version is
 required; substitute your version into the package name (i.e.

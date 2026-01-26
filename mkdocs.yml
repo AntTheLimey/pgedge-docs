@@ -139,6 +139,8 @@ extra:
     AI Toolkit:
       - title: pgEdge Postgres MCP Server
         url: pgedge-postgres-mcp-server/
+      - title: pgEdge Anonymizer
+        url: pgedge-anonymizer/
       - title: pgEdge RAG Server
         url: pgedge-rag-server/
       - title: pgEdge Docloader
