@@ -95,7 +95,7 @@ Installation of the server package creates a database user named `postgres`.
 This user has no default password.  To set a password for the `postgres`
 user, connect with [`psql`](https://www.postgresql.org/docs/18/app-psql.html)
 and use the
-[`ALTER ROLE`](https://www.postgresql.org/docs/17/sql-alterrole.html)
+[`ALTER ROLE`](https://www.postgresql.org/docs/18/sql-alterrole.html)
 command.  For example:
 
   ```sql
