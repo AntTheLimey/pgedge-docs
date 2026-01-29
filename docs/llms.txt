@@ -1,12 +1,17 @@
 # pgEdge Documentation
 
-> pgEdge provides enterprise-ready PostgreSQL with multi-master replication capabilities, enabling globally distributed, active-active database deployments.
+pgEdge provides enterprise-ready PostgreSQL with multi-master replication
+capabilities, enabling globally distributed, active-active database
+deployments.
 
 ## About pgEdge
 
-pgEdge delivers hardened, production-grade PostgreSQL with a seamless path from single database deployments to globally distributed multi-master clusters. Built on 100% standard, open source PostgreSQL.
+pgEdge delivers hardened, production-grade PostgreSQL with a seamless path
+from single database deployments to globally distributed multi-master
+clusters. Built on 100% standard, open source PostgreSQL.
 
-**Key Capabilities:**
+Key Capabilities:
+
 - Multi-master (active-active) replication with write-anywhere capability
 - Sub-50ms latency through geographic distribution
 - Zero-downtime operations and instant failover
@@ -14,8 +19,11 @@ pgEdge delivers hardened, production-grade PostgreSQL with a seamless path from 
 
 ## Deployment Options
 
+Choose from cloud-managed, containerized, or self-hosted deployment models.
+
 ### pgEdge Cloud
-Fully managed PostgreSQL service. Provision clusters across AWS, Azure, or GCP.
+Fully managed PostgreSQL service. Provision clusters across AWS, Azure, or
+GCP.
 - Documentation: https://docs.pgedge.com/cloud/
 
 ### Kubernetes (Containers)
@@ -32,8 +40,11 @@ Direct installations on virtual machines or physical servers.
 
 ## Core Extensions
 
+Essential extensions that enable pgEdge's distributed database capabilities.
+
 ### Spock v5
-Logical multi-master replication with bi-directional data flow and automatic conflict resolution.
+Logical multi-master replication with bi-directional data flow and automatic
+conflict resolution.
 - Documentation: https://docs.pgedge.com/spock-v5/
 
 ### LOLOR
@@ -46,10 +57,11 @@ Distributed sequence generation for cluster-wide unique IDs.
 
 ## AI Toolkit
 
-pgEdge provides production-ready AI infrastructure for PostgreSQL:
+pgEdge provides production-ready AI infrastructure for PostgreSQL.
 
 ### MCP Server
-Model Context Protocol server enabling AI agents to interact with PostgreSQL databases.
+Model Context Protocol server enabling AI agents to interact with PostgreSQL
+databases.
 - Documentation: https://docs.pgedge.com/pgedge-postgres-mcp-server/
 
 ### RAG Server
@@ -57,14 +69,18 @@ High-performance Retrieval-Augmented Generation API with hybrid search.
 - Documentation: https://docs.pgedge.com/pgedge-rag-server/
 
 ### Vectorizer
-Automatic document chunking and vector embedding generation as a PostgreSQL extension.
+Automatic document chunking and vector embedding generation as a PostgreSQL
+extension.
 - Documentation: https://docs.pgedge.com/pgedge-vectorizer/
 
 ### DocLoader
-Command-line utility for loading documents into PostgreSQL for AI applications.
+Command-line utility for loading documents into PostgreSQL for AI
+applications.
 - Documentation: https://docs.pgedge.com/pgedge-docloader/
 
 ## Operations Tools
+
+Utilities for managing, monitoring, and maintaining a PostgreSQL deployment.
 
 ### ACE (Active Consistency Engine)
 Automated data integrity verification and repair across replicated clusters.
@@ -84,12 +100,16 @@ PII replacement tool for creating safe dev/test database copies.
 
 ## Resources
 
+Connect with the pgEdge community and access additional support channels.
+
 - Website: https://www.pgedge.com
 - GitHub: https://github.com/pgEdge
 - Discord: https://discord.com/invite/pgedge
 - Support: https://www.pgedge.com/support
 
 ## Documentation Site
+
+This documentation is built using modern static site generation tools.
 
 - Main documentation: https://docs.pgedge.com
 - Built with MkDocs and Material for MkDocs theme
