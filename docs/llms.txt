@@ -8,7 +8,7 @@ deployments.
 
 pgEdge delivers hardened, production-grade PostgreSQL with a seamless path
 from single database deployments to globally distributed multi-master
-clusters. Built on 100% standard, open source PostgreSQL.
+clusters. Built on 100% standard, open-source PostgreSQL.
 
 Key Capabilities:
 
